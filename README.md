@@ -1,29 +1,55 @@
 # kanban-board
 
-## Project setup
-```
+Installation
+
+# Clone the repository
+
+git clone https://github.com/Alanjafi/kanban-board.git
+
+# Navigate into the project directory
+
+cd kanban-board
+
+# Install dependencies
+
 npm install
-```
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+-------------------------
 
-### Compiles and minifies for production
-```
+
+Development
+
+# Run development server
+
+npm run dev
+ ------------------------
+
+Build
+
+# Build for production
 npm run build
-```
 
-### Run your unit tests
-```
-npm run test:unit
-```
+--------------------------
 
-### Lints and fixes files
-```
-npm run lint
-```
+Features
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+Drag and drop cards across cards
+
+Add new cards to cards
+
+Edit task titles and descriptions
+
+--------------------------
+
+
+Technologies Used
+
+Vue 3
+
+Vuetify 3
+
+TypeScript
+
+Vite
+
+

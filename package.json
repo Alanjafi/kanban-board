@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+
     "serve": "vite preview",
     "build": "vite build",
     "lint": "vue-cli-service lint",
@@ -28,8 +29,6 @@
     "@vue/cli-plugin-typescript": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "@vue/eslint-config-typescript": "^9.1.0",
-    "@vitest/cli": "^1.0.0-beta.16",
-    "@vitest/vue": "^1.0.0-beta.16",
     "eslint": "^7.32.0",
     "eslint-plugin-vue": "^8.0.3",
     "sass": "^1.32.7",
