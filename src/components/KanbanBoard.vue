@@ -26,7 +26,7 @@
 import { ref, Ref } from 'vue'; 
 import MyTask from './MyTask.vue'; 
 
-
+//Define types for Card and Column
 interface Card {
   id: number;
   title: string;
@@ -40,6 +40,7 @@ interface Column {
   cards: Card[];
 }
 
+//nitialize columns with predefined data
 const columns: Ref<Column[]> = ref([
   {
     id: 1,
@@ -65,6 +66,7 @@ const columns: Ref<Column[]> = ref([
   },
 ]);
 
+//initialize references for managing state
 const nextColumnId: Ref<number> = ref(columns.value.length + 1);
 const newColumnName: Ref<string> = ref('');
 const newTaskTitle: Ref<string[]> = ref(Array(columns.value.length).fill(''));
@@ -72,11 +74,13 @@ const newTaskTitle: Ref<string[]> = ref(Array(columns.value.length).fill(''));
 const draggedCard: Ref<Card | null> = ref(null);
 const draggedFromColumn: Ref<Column | null> = ref(null);
 
+//handle drag start event
 const onDragStart = (card: Card, column: Column) => {
   draggedCard.value = card;
   draggedFromColumn.value = column;
 };
 
+//handle drop event
 const onDrop = (targetColumn: Column) => {
   if (draggedCard.value && draggedFromColumn.value) {
     const cardIndex = draggedFromColumn.value.cards.indexOf(draggedCard.value);
@@ -87,10 +91,12 @@ const onDrop = (targetColumn: Column) => {
   }
 };
 
+//func to toggle card editing mode
 const editCard = (card: Card, isEditing: boolean) => {
   card.editing = isEditing;
 };
 
+//function to add a new column
 const addColumn = () => {
   if (newColumnName.value.trim() === '') {
     return;
@@ -104,11 +110,13 @@ const addColumn = () => {
   newTaskTitle.value.push('');
 };
 
+//remove a column
 const removeColumn = (index: number) => {
   columns.value.splice(index, 1);
   newTaskTitle.value.splice(index, 1);
 };
 
+// Function to add a new task
 const addTask = (columnIndex: number, title: string) => {
   if (title.trim() === '') {
     return;
